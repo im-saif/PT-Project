@@ -165,6 +165,101 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	
 }
 
+void Output::DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = CircGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (CircGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(CircGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	int Radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+
+
+	pWind->DrawCircle(P1.x, P1.y, Radius, style);
+}
+
+void Output::DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = TriGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (TriGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TriGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+}
+
+void Output::DrawSqr(Point P1, GfxInfo SqrGfxInfo, bool selected) const
+{
+
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = SqrGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (SqrGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(SqrGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	int p[4] = { P1.x - 100,P1.x + 100, P1.x + 100,P1.x - 100 };//x cord.
+
+	int a[4] = { P1.y + 100,P1.y + 100, P1.y - 100,P1.y - 100 };//y cord.
+	pWind->DrawPolygon(p, a, 4, style);
+}
+
+void Output::DrawHex(Point P1, GfxInfo HexGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = HexGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (HexGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(HexGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	int p[6] = { P1.x, P1.x + 87, P1.x + 87,P1.x ,P1.x - 87 , P1.x - 87 };//x cord.
+
+	int a[6] = { P1.y + 100,P1.y + 50, P1.y - 50,P1.y - 100 ,P1.y - 50 ,P1.y + 50 };//y cord.
+	pWind->DrawPolygon(p, a, 6, style);
+}
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 Output::~Output()
