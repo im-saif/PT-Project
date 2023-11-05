@@ -24,10 +24,16 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_CIRCLE,
 
 	SELECT,
-	/*CHANGE_DRAW_COLOR,
+	CHANGE_DRAW_COLOR,
 	CHANGE_FILL_COLOR,
 	DELETE_FIGURE,
-	MOVE,*/
+	MOVE,
+	COLOR_RED,
+	COLOR_BLUE,
+	COLOR_GREEN,
+	COLOR_ORANGE,
+	COLOR_YELLOW,
+	COLOR_BLACK,
 	UNDO,
 	REDO,
 	CLEAR_ALL,

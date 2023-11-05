@@ -18,6 +18,13 @@ enum ActionType //The actions supported (you can add more if needed)
 	TO_SELECT,		//select one of the figures
 	TO_CHANGE_DRAW_COLOR, // change drawing color
 	TO_CHANGE_FILL_COLOR,	// change fill color
+	CHOOSE_COLOR_RED,		// choose red color
+	CHOOSE_COLOR_BLUE,		// choose blue color
+	CHOOSE_COLOR_GREEN,		// choose green color
+	CHOOSE_COLOR_ORANGE,	// choose orange color
+	CHOOSE_COLOR_YELLOW,	// choose yellow color
+	CHOOSE_COLOR_BLACK,		// choose black color
+
 	TO_DELETEE,				// delete selected figure
 	TO_MOVE,				// move selected figure
 	TO_UNDO,				// undo the last performed operation
