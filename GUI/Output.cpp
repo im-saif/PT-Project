@@ -85,7 +85,17 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_TRIANGLE] = "images\\MenuItems\\triangle.jpg";
 	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\hexagon.jpg";
 	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\circle.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\exit.jpg";
+	MenuItemImages[SELECT] = "images\\MenuItems\\select.jpg";
+	MenuItemImages[UNDO] = "images\\MenuItems\\undo.jpg";
+	MenuItemImages[REDO] = "images\\MenuItems\\redo.jpg";
+	MenuItemImages[CLEAR_ALL] = "images\\MenuItems\\clear all.jpg";
+	MenuItemImages[START_RECORDING] = "images\\MenuItems\\start recording.jpg";
+	MenuItemImages[STOP_RECORDING] = "images\\MenuItems\\stop recording.jpg";
+	MenuItemImages[PLAY_RECORDING] = "images\\MenuItems\\play recording.jpg";
+	MenuItemImages[SAVE_GRAPH] = "images\\MenuItems\\save graph.jpg";
+	MenuItemImages[LOAD_GRAPH] = "images\\MenuItems\\load graph.jpg";
+	MenuItemImages[SWITCH_PLAY] = "images\\MenuItems\\switch to play mode.jpg";
+	MenuItemImages[EXIT] = "images\\MenuItems\\exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
 
@@ -183,7 +193,7 @@ void Output::DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected) co
 	else
 		style = FRAME;
 
-	int Radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+	double Radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
 
 
 	pWind->DrawCircle(P1.x, P1.y, Radius, style);
