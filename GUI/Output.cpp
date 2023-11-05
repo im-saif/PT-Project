@@ -86,6 +86,16 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\hexagon.jpg";
 	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\circle.jpg";
 	MenuItemImages[SELECT] = "images\\MenuItems\\select.jpg";
+	MenuItemImages[CHANGE_DRAW_COLOR] = "images\\MenuItems\\drawing color.jpg";
+	MenuItemImages[CHANGE_FILL_COLOR] = "images\\MenuItems\\filling color.jpg";
+	MenuItemImages[DELETE_FIGURE] = "images\\MenuItems\\delete figure.jpg";
+	MenuItemImages[MOVE] = "images\\MenuItems\\move figure.jpg";
+	MenuItemImages[COLOR_RED] = "images\\MenuItems\\red.jpg";
+	MenuItemImages[COLOR_BLUE] = "images\\MenuItems\\blue.jpg";
+	MenuItemImages[COLOR_GREEN] = "images\\MenuItems\\green.jpg";
+	MenuItemImages[COLOR_ORANGE] = "images\\MenuItems\\orange.jpg";
+	MenuItemImages[COLOR_YELLOW] = "images\\MenuItems\\yellow.jpg";
+	MenuItemImages[COLOR_BLACK] = "images\\MenuItems\\black.jpg";
 	MenuItemImages[UNDO] = "images\\MenuItems\\undo.jpg";
 	MenuItemImages[REDO] = "images\\MenuItems\\redo.jpg";
 	MenuItemImages[CLEAR_ALL] = "images\\MenuItems\\clear all.jpg";
@@ -193,7 +203,7 @@ void Output::DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected) co
 	else
 		style = FRAME;
 
-	double Radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+	int Radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
 
 
 	pWind->DrawCircle(P1.x, P1.y, Radius, style);
