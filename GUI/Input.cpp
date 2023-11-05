@@ -34,15 +34,15 @@ string Input::GetSrting(Output *pO) const
 
 //This function reads the position where the user clicks to determine the desired action
 ActionType Input::GetUserAction() const
-{	
-	int x,y;
+{
+	int x, y;
 	pWind->WaitMouseClick(x, y);	//Get the coordinates of the user click
 
-	if(UI.InterfaceMode == MODE_DRAW)	//GUI in the DRAW mode
+	if (UI.InterfaceMode == MODE_DRAW)	//GUI in the DRAW mode
 	{
 		//[1] If user clicks on the Toolbar
-		if ( y >= 0 && y < UI.ToolBarHeight)
-		{	
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
 			//Check whick Menu item was clicked
 			//==> This assumes that menu items are lined up horizontally <==
 			int ClickedItemOrder = (x / UI.MenuItemWidth);
@@ -56,18 +56,38 @@ ActionType Input::GetUserAction() const
 			case ITM_TRIANGLE: return DRAW_TRIANGLE;
 			case ITM_HEXAGON: return DRAW_HEXAGON;
 			case ITM_CIRCLE: return DRAW_CIRCLE;
-			case EXIT: return TO_EXIT;	
-			
+			case SELECT:return TO_SELECT;
+			case CHANGE_DRAW_COLOR: return TO_CHANGE_DRAW_COLOR;
+			case CHANGE_FILL_COLOR: return TO_CHANGE_FILL_COLOR;
+			case DELETE_FIGURE: return TO_DELETEE;
+			case MOVE: return TO_MOVE;
+			case COLOR_RED: return CHOOSE_COLOR_RED;
+			case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
+			case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
+			case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
+			case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
+			case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
+			case UNDO: return TO_UNDO;
+			case REDO: return TO_REDO;
+			case CLEAR_ALL: return TO_CLEAR_ALL;
+			case START_RECORDING: return TO_START_RECORDING;
+			case STOP_RECORDING: return TO_STOP_RECORDING;
+			case PLAY_RECORDING: return TO_PLAY_RECORDING;
+			case SAVE_GRAPH: return TO_SAVE_GRAPH;
+			case LOAD_GRAPH: return TO_LOAD_GRAPH;
+			case SWITCH_PLAY: return TO_PLAY;
+			case EXIT: return TO_EXIT;
+
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
 
 		//[2] User clicks on the drawing area
-		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
 		{
-			return DRAWING_AREA;	
+			return DRAWING_AREA;
 		}
-		
+
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
@@ -76,8 +96,24 @@ ActionType Input::GetUserAction() const
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
+		if (y >= 0 && y < UI.ToolBarHeight) {
+			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			switch (ClickedItemOrder) {
+			case FIG_TYPE: return PICK_FIG_TYPE;
+			case FIG_FILL_COLOR: return PICK_FIG_FILL_COLOR;
+			case FIG_TYPE_AND_FILL_COLOR: return PICK_FIG_TYPE_AND_FILL_COLOR;
+			case SWITCH_DRAW: return TO_DRAW;
+			default: return EMPTY;
+			}
+
+		}
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			return DRAWING_AREA;
+		}
+		return STATUS;
 		return TO_PLAY;	//just for now. This should be updated
-	}	
+	}
 
 }
 /////////////////////////////////
