@@ -9,7 +9,7 @@
 
 enum GUI_MODE	//Graphical user interface mode
 {
-	MODE_DRAW,	//Drawing mode (startup mode) /// saleh
+	MODE_DRAW,	//Drawing mode (startup mode) 
 	MODE_PLAY	//Playing mode
 };
 
@@ -22,7 +22,23 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_TRIANGLE,
 	ITM_HEXAGON,
 	ITM_CIRCLE,
-	ITM_EXIT,		//Exit item
+
+	SELECT,
+	CHANGE_DRAW_COLOR,
+	CHANGE_FILL_COLOR,
+	DELETEE,
+	MOVE,
+	UNDO,
+	REDO,
+	CLEAR_ALL,
+	START_RECORDING,
+	STOP_RECORDING,
+	PLAY_RECORDING,
+	SAVE_GRAPH,
+	LOAD_GRAPH,
+
+	SWITCH_PLAY,
+	EXIT,			//Exit item
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
 };
@@ -33,6 +49,12 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	//If you want to change the menu items order, change the order here
 	
 	//TODO: Add more items names here
+
+	FIG_TYPE,
+	FIG_FILL_COLOR,
+	FIG_TYPE_AND_FILL_COLOR,
+
+	SWITCH_DRAW,
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
