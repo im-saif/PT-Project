@@ -272,7 +272,7 @@ int main()
 		pOut->ClearDrawArea();
 	}
 
-	pOut->PrintMessage("Play mode toolbar test,  Click anywhere to continue");
+	pOut->PrintMessage("Play mode toolbar test,  Click anywhere to continue"); // testing play mode toolbar
 	pIn->GetPointClicked(x, y);
 	pOut->CreatePlayToolBar();
 	///////////////////////////////////////////////////////////////////////////////////
@@ -281,6 +281,7 @@ int main()
 	///////////////////////////////////////////////////////////////////////////////////
 	pOut->PrintMessage("TEST3: Now Time to test class Input, Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
+	pOut->CreateDrawToolBar();
 
 	pOut->PrintMessage("Testing Input ability to read strings");
 
@@ -312,6 +313,10 @@ int main()
 		{
 		case DRAW_RECT:
 			pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
+			break;
+
+		case DRAW_SQUARE:
+			pOut->PrintMessage("Action: Draw a square, Click anywhere");
 			break;
 
 		case STATUS:
