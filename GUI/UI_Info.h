@@ -26,6 +26,13 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	SELECT,
 	CHANGE_DRAW_COLOR,
 	CHANGE_FILL_COLOR,
+	COLOR_RED,
+	COLOR_BLUE,
+	COLOR_GREEN,
+	COLOR_ORANGE,
+	COLOR_YELLOW,
+	COLOR_BLACK,
+
 	DELETEE,
 	MOVE,
 	UNDO,
