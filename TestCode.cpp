@@ -271,6 +271,10 @@ int main()
 		pIn->GetPointClicked(x, y);	//Wait for any click
 		pOut->ClearDrawArea();
 	}
+
+	pOut->PrintMessage("Play mode toolbar test,  Click anywhere to continue");
+	pIn->GetPointClicked(x, y);
+	pOut->CreatePlayToolBar();
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 3: 
 	//			Input Class: Read strings from the user
@@ -293,6 +297,7 @@ int main()
 	//			Input Class : Check for the user action
 	///////////////////////////////////////////////////////////////////////////////////
 	pOut->PrintMessage("TEST4: Testing Input ability to detect User Action, click anywhere");
+	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	ActionType ActType;
 

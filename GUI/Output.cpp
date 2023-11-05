@@ -6,7 +6,7 @@ Output::Output()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 	
-	UI.width = 1250;
+	UI.width = 1550;
 	UI.height = 650;
 	UI.wx = 5;
 	UI.wy = 5;
@@ -14,7 +14,7 @@ Output::Output()
 	
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 80;
+	UI.MenuItemWidth = 45;
 	
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -73,6 +73,10 @@ void Output::CreateDrawToolBar() const
 {
 	UI.InterfaceMode = MODE_DRAW;
 
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+
 	//You can draw the tool bar icons in any way you want.
 	//Below is one possible way
 	
@@ -124,6 +128,24 @@ void Output::CreateDrawToolBar() const
 void Output::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+
+	string MenuItemImages[PLAY_ITM_COUNT];
+	MenuItemImages[FIG_TYPE] = "images\\MenuItems\\figure type.jpg";\
+	MenuItemImages[FIG_FILL_COLOR] = "images\\MenuItems\\figures fill color.jpg";
+	MenuItemImages[FIG_TYPE_AND_FILL_COLOR] = "images\\MenuItems\\figures type and color.jpg";
+	MenuItemImages[SWITCH_DRAW] = "images\\MenuItems\\switch to draw mode.jpg";
+
+	for (int i = 0; i < PLAY_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
+
+
+	//Draw a line under the toolbar
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+
 	///TODO: write code to create Play mode menu
 }
 //////////////////////////////////////////////////////////////////////////////////////////
