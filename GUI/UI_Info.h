@@ -9,7 +9,7 @@
 
 enum GUI_MODE	//Graphical user interface mode
 {
-	MODE_DRAW,	//Drawing mode (startup mode)
+	MODE_DRAW,	//Drawing mode (startup mode) /// saleh
 	MODE_PLAY	//Playing mode
 };
 
