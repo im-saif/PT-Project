@@ -5,9 +5,9 @@
 
 int main()
 {
-	int x, y;
+	int x, y;				// ana saleh
 
-	//Create Input and Output objects to test
+	//Create Input and Output objects to test	
 	Output* pOut = new Output();
 	Input* pIn = pOut->CreateInput();
 
