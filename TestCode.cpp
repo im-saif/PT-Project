@@ -136,7 +136,7 @@ int main()
 
 
 		// 2.2.1 - Drawing non-filled triangle
-		pOut->PrintMessage("Drawing a Trinagle ==> non-filled,  Click three points");
+		pOut->PrintMessage("Drawing a Triangle ==> non-filled,  Click three points");
 		pIn->GetPointClicked(P1.x, P1.y);
 		pIn->GetPointClicked(P2.x, P2.y);
 		pIn->GetPointClicked(P3.x, P3.y);
@@ -148,7 +148,7 @@ int main()
 		pOut->DrawTri(P1, P2, P3, gfxInfo, false);
 
 		// 2.3.2 - Drawing highlighted non-filled triangle
-		pOut->PrintMessage("Drawing a Trinagle ==> Highlighted non-filled, Click to Highlight");
+		pOut->PrintMessage("Drawing a Triangle ==> Highlighted non-filled, Click to Highlight");
 		pIn->GetPointClicked(x, y);	//Wait for any click
 		pOut->DrawTri(P1, P2, P3, gfxInfo, true);
 
@@ -322,6 +322,94 @@ int main()
 			pOut->PrintMessage("Action: Draw a square, Click anywhere");
 			break;
 
+		case DRAW_TRIANGLE:
+			pOut->PrintMessage("Action: Draw a triangle, Click anywhere");
+			break;
+
+		case DRAW_HEXAGON:
+			pOut->PrintMessage("Action: Draw a hexagon, Click anywhere");
+			break;
+
+		case DRAW_CIRCLE:
+			pOut->PrintMessage("Action: Draw a circle, Click anywhere");
+			break;
+
+		case TO_SELECT:
+			pOut->PrintMessage("Action: Select figure, Click anywhere");
+			break;
+
+		case TO_CHANGE_DRAW_COLOR:
+			pOut->PrintMessage("Action: Change Draw Color, Click anywhere");
+			break;
+
+		case TO_CHANGE_FILL_COLOR:
+			pOut->PrintMessage("Action: Change Fill Color, Click anywhere");
+			break;
+
+		case TO_DELETEE:
+			pOut->PrintMessage("Action: Delete figure, Click anywhere");
+			break;
+
+		case TO_MOVE:
+			pOut->PrintMessage("Action: Move figure, Click anywhere");
+			break;
+
+		case CHOOSE_COLOR_RED:
+			pOut->PrintMessage("Action: Choose red color, Click anywhere");
+			break;
+
+		case CHOOSE_COLOR_BLUE:
+			pOut->PrintMessage("Action: Choose blue color, Click anywhere");
+			break;
+
+		case CHOOSE_COLOR_GREEN:
+			pOut->PrintMessage("Action: Choose green color, Click anywhere");
+			break;
+
+		case CHOOSE_COLOR_ORANGE:
+			pOut->PrintMessage("Action: Choose orange color, Click anywhere");
+			break;
+
+		case CHOOSE_COLOR_YELLOW:
+			pOut->PrintMessage("Action: Choose yellow color, Click anywhere");
+			break;
+
+		case CHOOSE_COLOR_BLACK:
+			pOut->PrintMessage("Action: Choose black color, Click anywhere");
+			break;
+
+		case TO_UNDO:
+			pOut->PrintMessage("Action: Undo, Click anywhere");
+			break;
+
+		case TO_REDO:
+			pOut->PrintMessage("Action: Redo, Click anywhere");
+			break;
+
+		case TO_CLEAR_ALL:
+			pOut->PrintMessage("Action: Clear all, Click anywhere");
+			break;
+
+		case TO_START_RECORDING:
+			pOut->PrintMessage("Action: Start Recording, Click anywhere");
+			break;
+
+		case TO_STOP_RECORDING:
+			pOut->PrintMessage("Action: Stop Recording, Click anywhere");
+			break;
+
+		case TO_PLAY_RECORDING:
+			pOut->PrintMessage("Action: Play Recording, Click anywhere");
+			break;
+
+		case TO_SAVE_GRAPH:
+			pOut->PrintMessage("Action: Save Graph, Click anywhere");
+			break;
+
+		case TO_LOAD_GRAPH:
+			pOut->PrintMessage("Action: Load Graph, Click anywhere");
+			break;
+
 		case STATUS:
 			pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 			break;
@@ -344,19 +432,30 @@ int main()
 			pOut->CreatePlayToolBar();
 			break;
 
+		case PICK_FIG_TYPE:
+			pOut->PrintMessage("Action: Play Mode: Pick figure type! Click anywhere");
+			break;
+
+		case PICK_FIG_FILL_COLOR:
+			pOut->PrintMessage("Action: Play Mode: Pick figure fill color! Click anywhere");
+			break;
+
+		case PICK_FIG_TYPE_AND_FILL_COLOR:
+			pOut->PrintMessage("Action: Play Mode: Pick figure type and fill color! Click anywhere");
+			break;
 
 			///TODO: Add more cases for the other action types
 
 
-		case EXIT:
+		case TO_EXIT:
 			break;
 		}
-	} while (ActType != EXIT);
+	} while (ActType != TO_EXIT);
 
 
 	/// Exiting
-	pOut->PrintMessage("Action: EXIT, test is finished, click anywhere to exit");
-	pIn->GetPointClicked(x, y);
+	pOut->PrintMessage("Action: EXIT, test is finished.");
+	/*pIn->GetPointClicked(x, y);*/
 
 
 	delete pIn;

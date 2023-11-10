@@ -98,7 +98,8 @@ ActionType Input::GetUserAction() const
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
 		if (y >= 0 && y < UI.ToolBarHeight) {
-			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			int count = 1;
+			int ClickedItemOrder = (x / (UI.MenuItemWidth + 10 * count++));
 			switch (ClickedItemOrder) {
 			case FIG_TYPE: return PICK_FIG_TYPE;
 			case FIG_FILL_COLOR: return PICK_FIG_FILL_COLOR;
@@ -113,7 +114,6 @@ ActionType Input::GetUserAction() const
 			return DRAWING_AREA;
 		}
 		return STATUS;
-		return TO_PLAY;	//just for now. This should be updated
 	}
 
 }
