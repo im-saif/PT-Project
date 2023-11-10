@@ -229,6 +229,7 @@ void Output::DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected) co
 
 
 	pWind->DrawCircle(P1.x, P1.y, Radius, style);
+	CreateDrawToolBar();
 }
 
 void Output::DrawTri(Point P1, Point P2, Point P3, GfxInfo TriGfxInfo, bool selected) const
@@ -275,6 +276,7 @@ void Output::DrawSqr(Point P1, GfxInfo SqrGfxInfo, bool selected) const
 
 	int a[4] = { P1.y + 100,P1.y + 100, P1.y - 100,P1.y - 100 };//y cord.
 	pWind->DrawPolygon(p, a, 4, style);
+	CreateDrawToolBar();
 }
 
 void Output::DrawHex(Point P1, GfxInfo HexGfxInfo, bool selected) const
@@ -299,6 +301,7 @@ void Output::DrawHex(Point P1, GfxInfo HexGfxInfo, bool selected) const
 
 	int a[6] = { P1.y + 100,P1.y + 50, P1.y - 50,P1.y - 100 ,P1.y - 50 ,P1.y + 50 };//y cord.
 	pWind->DrawPolygon(p, a, 6, style);
+	CreateDrawToolBar();
 }
 
 
