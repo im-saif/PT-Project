@@ -50,14 +50,6 @@ int main()
 		pIn->GetPointClicked(P1.x, P1.y);
 		pIn->GetPointClicked(P2.x, P2.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight && P2.y >= UI.ToolBarHeight && P2.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter two valid points:");
-			pIn->GetPointClicked(P1.x, P1.y);
-			pIn->GetPointClicked(P2.x, P2.y);
-
-		}
-
 		gfxInfo.BorderWdth = 5;
 		gfxInfo.DrawClr = BLACK;	//any color for border
 		gfxInfo.isFilled = false;	//Figure is NOT filled
@@ -74,13 +66,6 @@ int main()
 		pIn->GetPointClicked(P1.x, P1.y);
 		pIn->GetPointClicked(P2.x, P2.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight && P2.y >= UI.ToolBarHeight && P2.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter two valid points:");
-			pIn->GetPointClicked(P1.x, P1.y);
-			pIn->GetPointClicked(P2.x, P2.y);
-
-		}
 
 		gfxInfo.BorderWdth = 6;
 		gfxInfo.DrawClr = BLUE;	//any color for border
@@ -110,12 +95,6 @@ int main()
 		pOut->PrintMessage("Drawing a Square ==> non-filled,  Click one point center of the square");
 		pIn->GetPointClicked(P1.x, P1.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter a valid point:");
-			pIn->GetPointClicked(P1.x, P1.y);
-		}
-
 
 		gfxInfo.BorderWdth = 5;
 		gfxInfo.DrawClr = BLACK;	//any color for border
@@ -132,13 +111,7 @@ int main()
 		pOut->PrintMessage("Drawing a Square ==> filled,  Click one point center of the square");
 		pIn->GetPointClicked(P1.x, P1.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter a valid point:");
-			pIn->GetPointClicked(P1.x, P1.y);
-		}
-
-
+	
 		gfxInfo.BorderWdth = 6;
 		gfxInfo.DrawClr = BLUE;	//any color for border
 		gfxInfo.FillClr = GREEN;//any color for filling
@@ -169,15 +142,6 @@ int main()
 		pIn->GetPointClicked(P2.x, P2.y);
 		pIn->GetPointClicked(P3.x, P3.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight && P2.y >= UI.ToolBarHeight && P2.y < UI.height - UI.StatusBarHeight && P3.y >= UI.ToolBarHeight && P3.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter three valid points:");
-			pIn->GetPointClicked(P1.x, P1.y);
-			pIn->GetPointClicked(P2.x, P2.y);
-			pIn->GetPointClicked(P3.x, P3.y);
-
-		}
-
 
 		gfxInfo.BorderWdth = 5;
 		gfxInfo.DrawClr = BLACK;	//any color for border
@@ -196,14 +160,6 @@ int main()
 		pIn->GetPointClicked(P2.x, P2.y);
 		pIn->GetPointClicked(P3.x, P3.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight && P2.y >= UI.ToolBarHeight && P2.y < UI.height - UI.StatusBarHeight && P3.y >= UI.ToolBarHeight && P3.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter three valid points:");
-			pIn->GetPointClicked(P1.x, P1.y);
-			pIn->GetPointClicked(P2.x, P2.y);
-			pIn->GetPointClicked(P3.x, P3.y);
-
-		}
 
 		gfxInfo.BorderWdth = 6;
 		gfxInfo.DrawClr = BLUE;	//any color for border
@@ -232,11 +188,6 @@ int main()
 		pOut->PrintMessage("Drawing a Hexagon ==> non-filled,  Click one point center of the Hexagon");
 		pIn->GetPointClicked(P1.x, P1.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter a valid point:");
-			pIn->GetPointClicked(P1.x, P1.y);
-		}
 
 
 		gfxInfo.BorderWdth = 5;
@@ -253,12 +204,6 @@ int main()
 		// 2.2.3 - Drawing a square
 		pOut->PrintMessage("Drawing a Hexagon ==> filled,  Click one point center of the Hexagon");
 		pIn->GetPointClicked(P1.x, P1.y);
-
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter a valid point:");
-			pIn->GetPointClicked(P1.x, P1.y);
-		}
 
 
 		gfxInfo.BorderWdth = 6;
@@ -295,13 +240,6 @@ int main()
 		pIn->GetPointClicked(P1.x, P1.y);
 		pIn->GetPointClicked(P2.x, P2.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight && P2.y >= UI.ToolBarHeight && P2.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter two valid points:");
-			pIn->GetPointClicked(P1.x, P1.y);
-			pIn->GetPointClicked(P2.x, P2.y);
-
-		}
 
 		gfxInfo.BorderWdth = 5;
 		gfxInfo.DrawClr = BLACK;	//any color for border
@@ -319,13 +257,6 @@ int main()
 		pIn->GetPointClicked(P1.x, P1.y);
 		pIn->GetPointClicked(P2.x, P2.y);
 
-		while (!(P1.y >= UI.ToolBarHeight && P1.y < UI.height - UI.StatusBarHeight && P2.y >= UI.ToolBarHeight && P2.y < UI.height - UI.StatusBarHeight))
-		{
-			pOut->PrintMessage("Can't draw here!! Enter two valid points:");
-			pIn->GetPointClicked(P1.x, P1.y);
-			pIn->GetPointClicked(P2.x, P2.y);
-
-		}
 
 		gfxInfo.BorderWdth = 6;
 		gfxInfo.DrawClr = BLUE;	//any color for border
