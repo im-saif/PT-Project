@@ -7,7 +7,7 @@ int main()
 {
 	int x, y;
 
-	//Create Input and Output objects to test		// ana saleh
+	//Create Input and Output objects to test		// ana saleh		// ana shady
 	Output* pOut = new Output();
 	Input* pIn = pOut->CreateInput();
 
