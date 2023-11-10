@@ -45,8 +45,8 @@ ActionType Input::GetUserAction() const
 		{
 			//Check whick Menu item was clicked
 			//==> This assumes that menu items are lined up horizontally <==
-			int count = 1;
-			int ClickedItemOrder = (x / (UI.MenuItemWidth + 10*count++));
+
+			int ClickedItemOrder = (x / (UI.MenuItemWidth + 10));
 			//Divide x coord of the point clicked by the menu item width (int division)
 			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
 
@@ -98,13 +98,14 @@ ActionType Input::GetUserAction() const
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
 		if (y >= 0 && y < UI.ToolBarHeight) {
-			int count = 1;
-			int ClickedItemOrder = (x / (UI.MenuItemWidth + 10 * count++));
+
+			int ClickedItemOrder = (x / (UI.MenuItemWidth + 10 ));
 			switch (ClickedItemOrder) {
 			case FIG_TYPE: return PICK_FIG_TYPE;
 			case FIG_FILL_COLOR: return PICK_FIG_FILL_COLOR;
 			case FIG_TYPE_AND_FILL_COLOR: return PICK_FIG_TYPE_AND_FILL_COLOR;
 			case SWITCH_DRAW: return TO_DRAW;
+			case EXITT: return TO_EXIT;
 			default: return EMPTY;
 			}
 
