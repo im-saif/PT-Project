@@ -281,7 +281,7 @@ int main()
 	///////////////////////////////////////////////////////////////////////////////////
 	pOut->PrintMessage("TEST3: Now Time to test class Input, Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->CreateDrawToolBar();
+	
 
 	pOut->PrintMessage("Testing Input ability to read strings");
 
@@ -290,7 +290,7 @@ int main()
 	// 2- After reading the string clear the status bar
 	// 3- print on the status bar "You Entered" then print the string
 
-	string UserText = pIn->GetSrting(pOut);
+	string UserText = "You entered " + pIn->GetSrting(pOut);
 	pOut->PrintMessage(UserText);
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -454,8 +454,8 @@ int main()
 
 
 	/// Exiting
-	pOut->PrintMessage("Action: EXIT, test is finished.");
-	/*pIn->GetPointClicked(x, y);*/
+	pOut->PrintMessage("Action: EXIT, test is finished, click anywhere to exit");
+	pIn->GetPointClicked(x, y);
 
 
 	delete pIn;

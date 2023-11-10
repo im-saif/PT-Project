@@ -115,7 +115,7 @@ void Output::CreateDrawToolBar() const
 
 	//Draw menu item one image at a time
 	for (int i = 0; i < DRAW_ITM_COUNT; i++) 
-		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 + 10*i, 0, UI.MenuItemWidth, UI.ToolBarHeight-5);
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10*i , 0, UI.MenuItemWidth, UI.ToolBarHeight-5);
 
 
 	//Draw a line under the toolbar
@@ -137,9 +137,9 @@ void Output::CreatePlayToolBar() const
 	MenuItemImages[FIG_FILL_COLOR] = "images\\MenuItems\\figures fill color.jpg";
 	MenuItemImages[FIG_TYPE_AND_FILL_COLOR] = "images\\MenuItems\\figures type and color.jpg";
 	MenuItemImages[SWITCH_DRAW] = "images\\MenuItems\\switch to draw mode.jpg";
-
+	MenuItemImages[EXITT] = "images\\MenuItems\\exit.jpg";
 	for (int i = 0; i < PLAY_ITM_COUNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 * i , 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
 
 
 	//Draw a line under the toolbar
