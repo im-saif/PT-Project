@@ -343,7 +343,6 @@ void Output::DrawCirc(Point &P1, Point &P2, GfxInfo CircGfxInfo, bool selected) 
 		PrintMessage("Can't draw here!! Enter two valid points:");
 		pWind->WaitMouseClick(P1.x, P1.y);
 		pWind->WaitMouseClick(P2.x, P2.y);
-
 	}
 
 	
