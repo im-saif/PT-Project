@@ -10,7 +10,8 @@
 enum GUI_MODE	//Graphical user interface mode
 {
 	MODE_DRAW,	//Drawing mode (startup mode) 
-	MODE_PLAY	//Playing mode
+	MODE_PLAY,	//Playing mode
+	MODE_COLOR
 };
 
 enum DrawMenuItem //The items of the Draw menu (you should add more items)
@@ -28,12 +29,6 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	CHANGE_FILL_COLOR,
 	DELETE_FIGURE,
 	MOVE,
-	COLOR_RED,
-	COLOR_BLUE,
-	COLOR_GREEN,
-	COLOR_ORANGE,
-	COLOR_YELLOW,
-	COLOR_BLACK,
 	UNDO,
 	REDO,
 	CLEAR_ALL,
@@ -64,6 +59,21 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
+};
+
+enum ColorMenuItem
+{
+	COLOR_RED ,
+	COLOR_BLUE,
+	COLOR_GREEN,
+	COLOR_ORANGE,
+	COLOR_YELLOW,
+	COLOR_BLACK,
+
+	SWITCH_DRAWW,
+	SWITCH_PLAYY,
+
+	COLOR_ITM_COUNT
 };
 
 

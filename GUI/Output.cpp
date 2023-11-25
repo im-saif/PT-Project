@@ -94,12 +94,6 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[CHANGE_FILL_COLOR] = "images\\MenuItems\\filling color.jpg";
 	MenuItemImages[DELETE_FIGURE] = "images\\MenuItems\\delete figure.jpg";
 	MenuItemImages[MOVE] = "images\\MenuItems\\move figure.jpg";
-	MenuItemImages[COLOR_RED] = "images\\MenuItems\\red.jpg";
-	MenuItemImages[COLOR_BLUE] = "images\\MenuItems\\blue.jpg";
-	MenuItemImages[COLOR_GREEN] = "images\\MenuItems\\green.jpg";
-	MenuItemImages[COLOR_ORANGE] = "images\\MenuItems\\orange.jpg";
-	MenuItemImages[COLOR_YELLOW] = "images\\MenuItems\\yellow.jpg";
-	MenuItemImages[COLOR_BLACK] = "images\\MenuItems\\black.jpg";
 	MenuItemImages[UNDO] = "images\\MenuItems\\undo.jpg";
 	MenuItemImages[REDO] = "images\\MenuItems\\redo.jpg";
 	MenuItemImages[CLEAR_ALL] = "images\\MenuItems\\clear all.jpg";
@@ -164,6 +158,29 @@ void Output::CreatePlayToolBar() const
 	///TODO: write code to create Play mode menu
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+
+void Output::CreateColorToolBar() const
+{
+	UI.InterfaceMode = MODE_COLOR;
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+	string MenuItemImages[COLOR_ITM_COUNT];
+	MenuItemImages[COLOR_RED] = "images\\MenuItems\\red.jpg";
+	MenuItemImages[COLOR_BLUE] = "images\\MenuItems\\blue.jpg";
+	MenuItemImages[COLOR_GREEN] = "images\\MenuItems\\green.jpg";
+	MenuItemImages[COLOR_ORANGE] = "images\\MenuItems\\orange.jpg";
+	MenuItemImages[COLOR_YELLOW] = "images\\MenuItems\\yellow.jpg";
+	MenuItemImages[COLOR_BLACK] = "images\\MenuItems\\black.jpg";
+	MenuItemImages[SWITCH_DRAWW] = "images\\MenuItems\\switch to draw mode.jpg";
+	MenuItemImages[SWITCH_PLAYY] = "images\\MenuItems\\switch to play mode.jpg";
+	for (int i = 0; i < COLOR_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
+
+	//Draw a line under the toolbar
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+}
 
 void Output::ClearDrawArea() const
 {
@@ -343,6 +360,7 @@ void Output::DrawCirc(Point &P1, Point &P2, GfxInfo CircGfxInfo, bool selected) 
 		PrintMessage("Can't draw here!! Enter two valid points:");
 		pWind->WaitMouseClick(P1.x, P1.y);
 		pWind->WaitMouseClick(P2.x, P2.y);
+
 	}
 
 	

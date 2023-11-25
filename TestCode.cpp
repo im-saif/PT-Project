@@ -280,6 +280,10 @@ int main()
 	pOut->PrintMessage("Play mode toolbar test,  Click anywhere to continue"); // testing play mode toolbar
 	pIn->GetPointClicked(x, y);
 	pOut->CreatePlayToolBar();
+
+	pOut->PrintMessage("Color mode toolbar test,  Click anywhere to continue"); // testing color mode toolbar
+	pIn->GetPointClicked(x, y);
+	pOut->CreateColorToolBar();
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 3: 
 	//			Input Class: Read strings from the user
