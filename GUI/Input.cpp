@@ -108,7 +108,6 @@ ActionType Input::GetUserAction() const
 			case EXITT: return TO_EXIT;
 			default: return EMPTY;
 			}
-
 		}
 		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
 		{
