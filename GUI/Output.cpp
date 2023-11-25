@@ -114,9 +114,20 @@ void Output::CreateDrawToolBar() const
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
-	for (int i = 0; i < DRAW_ITM_COUNT; i++) 
-		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 + 10*i, 0, UI.MenuItemWidth, UI.ToolBarHeight-5);
+	/*for (int i = 0; i < DRAW_ITM_COUNT; i++) 
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10*i , 0, UI.MenuItemWidth, UI.ToolBarHeight-5);*/
+	int ix = 0;
 
+
+	for (int i = COLOR_RED; i <= COLOR_BLACK; i++) {
+		pWind->DrawImage(MenuItemImages[i], ix, (i % 2) * (UI.ToolBarHeight - 5) / 2, UI.MenuItemWidth / 2, (UI.ToolBarHeight - 5) / 2);
+		if (i%2) ix += UI.MenuItemWidth / 2 + 10;
+	}
+	
+	for (int i = UNDO; i < DRAW_ITM_COUNT; i++) {
+		pWind->DrawImage(MenuItemImages[i], ix, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
+		ix += UI.MenuItemWidth + 10;
+	}
 
 	//Draw a line under the toolbar
 	pWind->SetPen(RED, 3);
