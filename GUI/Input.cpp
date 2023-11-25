@@ -62,12 +62,6 @@ ActionType Input::GetUserAction() const
 			case CHANGE_FILL_COLOR: return TO_CHANGE_FILL_COLOR;
 			case DELETE_FIGURE: return TO_DELETEE;
 			case MOVE: return TO_MOVE;
-			/*case COLOR_RED: return CHOOSE_COLOR_RED;
-			case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
-			case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
-			case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
-			case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
-			case COLOR_BLACK: return CHOOSE_COLOR_BLACK;*/
 			case UNDO: return TO_UNDO;
 			case REDO: return TO_REDO;
 			case CLEAR_ALL: return TO_CLEAR_ALL;
