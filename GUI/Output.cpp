@@ -336,6 +336,7 @@ void Output::DrawCirc(Point &P1, Point &P2, GfxInfo CircGfxInfo, bool selected) 
 		PrintMessage("Circle too close to toolbar or status bar !! Enter two valid points:");
 		pWind->WaitMouseClick(P1.x, P1.y);
 		pWind->WaitMouseClick(P2.x, P2.y);
+		Radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
 	}
 
 	color DrawingClr;
