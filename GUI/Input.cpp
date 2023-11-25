@@ -62,12 +62,12 @@ ActionType Input::GetUserAction() const
 			case CHANGE_FILL_COLOR: return TO_CHANGE_FILL_COLOR;
 			case DELETE_FIGURE: return TO_DELETEE;
 			case MOVE: return TO_MOVE;
-			case COLOR_RED: return CHOOSE_COLOR_RED;
+			/*case COLOR_RED: return CHOOSE_COLOR_RED;
 			case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
 			case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
 			case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
 			case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
-			case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
+			case COLOR_BLACK: return CHOOSE_COLOR_BLACK;*/
 			case UNDO: return TO_UNDO;
 			case REDO: return TO_REDO;
 			case CLEAR_ALL: return TO_CLEAR_ALL;
@@ -90,6 +90,28 @@ ActionType Input::GetUserAction() const
 		}
 
 		//[3] User clicks on the status bar
+		return STATUS;
+	}
+	else if (UI.InterfaceMode == MODE_COLOR) {
+		if (y >= 0 && y < UI.ToolBarHeight) {
+
+			int ClickedItemOrder = (x / (UI.MenuItemWidth + 10));
+			switch (ClickedItemOrder) {
+			case COLOR_RED: return CHOOSE_COLOR_RED;
+			case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
+			case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
+			case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
+			case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
+			case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
+			case SWITCH_DRAWW:return TO_DRAW;
+			case SWITCH_PLAYY:return TO_PLAY;
+			default: return EMPTY;
+			}
+		}
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			return DRAWING_AREA;
+		}
 		return STATUS;
 	}
 	else	//GUI is in PLAY mode
