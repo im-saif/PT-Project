@@ -367,26 +367,32 @@ int main()
 
 		case CHOOSE_COLOR_RED:
 			pOut->PrintMessage("Action: Choose red color, Click anywhere");
+			pOut->CreateDrawToolBar();
 			break;
 
 		case CHOOSE_COLOR_BLUE:
 			pOut->PrintMessage("Action: Choose blue color, Click anywhere");
+			pOut->CreateDrawToolBar();
 			break;
 
 		case CHOOSE_COLOR_GREEN:
 			pOut->PrintMessage("Action: Choose green color, Click anywhere");
+			pOut->CreateDrawToolBar();
 			break;
 
 		case CHOOSE_COLOR_ORANGE:
 			pOut->PrintMessage("Action: Choose orange color, Click anywhere");
+			pOut->CreateDrawToolBar();
 			break;
 
 		case CHOOSE_COLOR_YELLOW:
 			pOut->PrintMessage("Action: Choose yellow color, Click anywhere");
+			pOut->CreateDrawToolBar();
 			break;
 
 		case CHOOSE_COLOR_BLACK:
 			pOut->PrintMessage("Action: Choose black color, Click anywhere");
+			pOut->CreateDrawToolBar();
 			break;
 
 		case TO_UNDO:

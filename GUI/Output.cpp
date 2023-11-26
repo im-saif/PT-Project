@@ -110,22 +110,6 @@ void Output::CreateDrawToolBar() const
 	//Draw menu item one image at a time
 	for (int i = 0; i < DRAW_ITM_COUNT; i++) 
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10*i , 0, UI.MenuItemWidth, UI.ToolBarHeight-5);
-	/*int ix = 0;
-
-	for (int i = 0; i < COLOR_RED; i++) {
-		pWind->DrawImage(MenuItemImages[i], ix, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
-		ix += UI.MenuItemWidth + 10;
-	}
-
-	for (int i = COLOR_RED; i <= COLOR_BLACK; i++) {
-		pWind->DrawImage(MenuItemImages[i], ix, (i % 2) * (UI.ToolBarHeight - 5) / 2, UI.MenuItemWidth / 2, (UI.ToolBarHeight - 5) / 2);
-		if (i%2) ix += UI.MenuItemWidth / 2 + 10;
-	}
-	
-	for (int i = UNDO; i < DRAW_ITM_COUNT; i++) {
-		pWind->DrawImage(MenuItemImages[i], ix, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
-		ix += UI.MenuItemWidth + 10;
-	}*/
 
 	//Draw a line under the toolbar
 	pWind->SetPen(RED, 3);
@@ -172,8 +156,7 @@ void Output::CreateColorToolBar() const
 	MenuItemImages[COLOR_ORANGE] = "images\\MenuItems\\orange.jpg";
 	MenuItemImages[COLOR_YELLOW] = "images\\MenuItems\\yellow.jpg";
 	MenuItemImages[COLOR_BLACK] = "images\\MenuItems\\black.jpg";
-	MenuItemImages[SWITCH_DRAWW] = "images\\MenuItems\\switch to draw mode.jpg";
-	MenuItemImages[SWITCH_PLAYY] = "images\\MenuItems\\switch to play mode.jpg";
+
 	for (int i = 0; i < COLOR_ITM_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
 
