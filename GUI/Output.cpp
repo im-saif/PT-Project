@@ -107,14 +107,13 @@ void Output::CreateDrawToolBar() const
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
-	int ix = 0;
+	
 
-	for (int i = 0; i < DRAW_ITM_COUNT; i++) {
+	for (int i = 0; i < DRAW_ITM_COUNT; i++) 
+		pWind->DrawImage(MenuItemImages[i], UI.MenuItemWidth*i + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
+	
 
-		pWind->DrawImage(MenuItemImages[i], ix, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);	ix += UI.MenuItemWidth + 10;
-	}
-
-
+	/*int ix = 0;*/
 	/*for (int i = 0; i < COLOR_RED; i++) {
 		pWind->DrawImage(MenuItemImages[i], ix, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
 		ix += UI.MenuItemWidth + 10;
@@ -123,7 +122,6 @@ void Output::CreateDrawToolBar() const
 	for (int i = COLOR_RED; i <= COLOR_BLACK; i++) {
 		pWind->DrawImage(MenuItemImages[i], ix, (i % 2) * (UI.ToolBarHeight - 5) / 2, UI.MenuItemWidth / 2, (UI.ToolBarHeight - 5) / 2);
 		if (i%2) ix += UI.MenuItemWidth / 2 + 10;
-<<<<<<< Updated upstream
 	}*/
 
 	
@@ -135,7 +133,7 @@ void Output::CreateDrawToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void Output::colorpallete() const {
+void Output::colorpalette() const {
 	int menulength = 200;
 	int menuwidth = 50;
 	int iconwidth = 30;
@@ -189,7 +187,24 @@ void Output::CreatePlayToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-
+void Output::CreateColorToolBar() const
+{
+	UI.InterfaceMode = MODE_COLOR;
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+	string MenuItemImages[COLOR_ITM_COUNT];
+	MenuItemImages[COLOR_RED] = "images\\MenuItems\\red.jpg";
+	MenuItemImages[COLOR_BLUE] = "images\\MenuItems\\blue.jpg";
+	MenuItemImages[COLOR_GREEN] = "images\\MenuItems\\green.jpg";
+	MenuItemImages[COLOR_ORANGE] = "images\\MenuItems\\orange.jpg";
+	MenuItemImages[COLOR_YELLOW] = "images\\MenuItems\\yellow.jpg";
+	MenuItemImages[COLOR_BLACK] = "images\\MenuItems\\black.jpg";
+	/*MenuItemImages[SWITCH_DRAWW] = "images\\MenuItems\\switch to draw mode.jpg";
+	MenuItemImages[SWITCH_PLAYY] = "images\\MenuItems\\switch to play mode.jpg";*/
+	for (int i = 0; i < COLOR_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
+}
 
 void Output::ClearDrawArea() const
 {

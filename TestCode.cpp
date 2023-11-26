@@ -281,9 +281,9 @@ int main()
 	pIn->GetPointClicked(x, y);
 	pOut->CreatePlayToolBar();
 
-	pOut->PrintMessage("Color mode toolbar test,  Click anywhere to continue"); // testing color mode toolbar
-	pIn->GetPointClicked(x, y);
-	/*pOut->CreateColorToolBar();*/
+	//pOut->PrintMessage("Color mode toolbar test,  Click anywhere to continue"); // testing color mode toolbar
+	//pIn->GetPointClicked(x, y);
+	//pOut->CreateColorToolBar();
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 3: 
 	//			Input Class: Read strings from the user
@@ -320,7 +320,6 @@ int main()
 	do
 	{
 		ActType = pIn->GetUserAction();
-
 		switch (ActType)
 		{
 		case DRAW_RECT:
@@ -349,12 +348,12 @@ int main()
 
 		case TO_CHANGE_DRAW_COLOR:
 			pOut->PrintMessage("Action: Change Draw Color, Click anywhere");
-			pOut->colorpallete();
+			pOut->colorpalette();
 			break;
 
 		case TO_CHANGE_FILL_COLOR:
 			pOut->PrintMessage("Action: Change Fill Color, Click anywhere");
-			pOut->colorpallete();
+			pOut->colorpalette();
 			break;
 
 		case TO_DELETEE:
