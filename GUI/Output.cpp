@@ -7,8 +7,8 @@ Output::Output()
 	UI.InterfaceMode = MODE_DRAW;
 	UI.width = 1250;
 	UI.height = 650;
-	UI.wx = 5;
-	UI.wy = 5;
+	UI.wx = 50;
+	UI.wy = 50;
 
 
 	UI.StatusBarHeight = 50;
@@ -111,20 +111,7 @@ void Output::CreateDrawToolBar() const
 
 	for (int i = 0; i < DRAW_ITM_COUNT; i++) 
 		pWind->DrawImage(MenuItemImages[i], UI.MenuItemWidth*i + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
-	
 
-	/*int ix = 0;*/
-	/*for (int i = 0; i < COLOR_RED; i++) {
-		pWind->DrawImage(MenuItemImages[i], ix, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
-		ix += UI.MenuItemWidth + 10;
-	}
-
-	for (int i = COLOR_RED; i <= COLOR_BLACK; i++) {
-		pWind->DrawImage(MenuItemImages[i], ix, (i % 2) * (UI.ToolBarHeight - 5) / 2, UI.MenuItemWidth / 2, (UI.ToolBarHeight - 5) / 2);
-		if (i%2) ix += UI.MenuItemWidth / 2 + 10;
-	}*/
-
-	
 
 	//Draw a line under the toolbar
 	pWind->SetPen(RED, 3);
@@ -134,13 +121,13 @@ void Output::CreateDrawToolBar() const
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void Output::colorpalette() const {
-	int menulength = 200;
-	int menuwidth = 50;
-	int iconwidth = 30;
-	int iconlength = 20;
-	int ix = 0;
-	window* colorp = new window(menulength, menuwidth, 300, 100);
-	colorp->ChangeTitle("Colors");
+	UI.InterfaceMode == MODE_COLOR;
+	int menulength = 310;
+	int menuwidth = 60;
+	int iconwidth = 40;
+	int iconlength = 40;
+	window* colorp = new window(menulength, menuwidth, 350, 140);
+	colorp->ChangeTitle("Choose Color");
 
 	string Menucolor[COLOR_ITM_COUNT];
 	Menucolor[COLOR_RED] = "images\\MenuItems\\red.jpg";
@@ -157,7 +144,6 @@ void Output::colorpalette() const {
 		colorp->DrawImage(Menucolor[i], i * iconlength + 10 * i, 0, iconlength, iconwidth);
 	int x, y;
 	colorp->WaitMouseClick(x, y);
-
 	delete colorp;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -171,7 +157,7 @@ void Output::CreatePlayToolBar() const
 
 	string MenuItemImages[PLAY_ITM_COUNT];
 	MenuItemImages[FIG_TYPE] = "images\\MenuItems\\figure type.jpg"; \
-		MenuItemImages[FIG_FILL_COLOR] = "images\\MenuItems\\figures fill color.jpg";
+	MenuItemImages[FIG_FILL_COLOR] = "images\\MenuItems\\figures fill color.jpg";
 	MenuItemImages[FIG_TYPE_AND_FILL_COLOR] = "images\\MenuItems\\figures type and color.jpg";
 	MenuItemImages[SWITCH_DRAW] = "images\\MenuItems\\switch to draw mode.jpg";
 	MenuItemImages[EXITT] = "images\\MenuItems\\exit.jpg";
@@ -200,8 +186,7 @@ void Output::CreateColorToolBar() const
 	MenuItemImages[COLOR_ORANGE] = "images\\MenuItems\\orange.jpg";
 	MenuItemImages[COLOR_YELLOW] = "images\\MenuItems\\yellow.jpg";
 	MenuItemImages[COLOR_BLACK] = "images\\MenuItems\\black.jpg";
-	/*MenuItemImages[SWITCH_DRAWW] = "images\\MenuItems\\switch to draw mode.jpg";
-	MenuItemImages[SWITCH_PLAYY] = "images\\MenuItems\\switch to play mode.jpg";*/
+
 	for (int i = 0; i < COLOR_ITM_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
 }

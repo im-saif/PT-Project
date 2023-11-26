@@ -87,9 +87,10 @@ ActionType Input::GetUserAction() const
 		return STATUS;
 	}
 	else if (UI.InterfaceMode == MODE_COLOR) {
+
 		if (y >= 0 && y < UI.ToolBarHeight) {
 
-			int ClickedItemOrder = (x / (UI.MenuItemWidth + 10));
+			int ClickedItemOrder = (x / UI.MenuItemWidth + 10);
 			switch (ClickedItemOrder) {
 			case COLOR_RED: return CHOOSE_COLOR_RED;
 			case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
@@ -97,8 +98,6 @@ ActionType Input::GetUserAction() const
 			case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
 			case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
 			case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
-			case SWITCH_DRAWW:return TO_DRAW;
-			case SWITCH_PLAYY:return TO_PLAY;
 			default: return EMPTY;
 			}
 		}

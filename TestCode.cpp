@@ -281,9 +281,6 @@ int main()
 	pIn->GetPointClicked(x, y);
 	pOut->CreatePlayToolBar();
 
-	//pOut->PrintMessage("Color mode toolbar test,  Click anywhere to continue"); // testing color mode toolbar
-	//pIn->GetPointClicked(x, y);
-	//pOut->CreateColorToolBar();
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 3: 
 	//			Input Class: Read strings from the user
@@ -364,7 +361,7 @@ int main()
 			pOut->PrintMessage("Action: Move figure, Click anywhere");
 			break;
 
-		/*case CHOOSE_COLOR_RED:
+		case CHOOSE_COLOR_RED:
 			pOut->PrintMessage("Action: Choose red color, Click anywhere");
 			break;
 
@@ -386,7 +383,7 @@ int main()
 
 		case CHOOSE_COLOR_BLACK:
 			pOut->PrintMessage("Action: Choose black color, Click anywhere");
-			break;*/
+			break;
 
 		case TO_UNDO:
 			pOut->PrintMessage("Action: Undo, Click anywhere");
@@ -455,7 +452,6 @@ int main()
 			break;
 
 			///TODO: Add more cases for the other action types
-
 
 		case TO_EXIT:
 			break;
