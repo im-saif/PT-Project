@@ -357,7 +357,7 @@ int main()
 			pOut->CreateColorToolBar();
 			break;
 
-		case TO_DELETEE:
+		case TO_DELETE:
 			pOut->PrintMessage("Action: Delete figure, Click anywhere");
 			break;
 
