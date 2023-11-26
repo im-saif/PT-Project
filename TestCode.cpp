@@ -283,7 +283,7 @@ int main()
 
 	pOut->PrintMessage("Color mode toolbar test,  Click anywhere to continue"); // testing color mode toolbar
 	pIn->GetPointClicked(x, y);
-	pOut->CreateColorToolBar();
+	/*pOut->CreateColorToolBar();*/
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 3: 
 	//			Input Class: Read strings from the user
@@ -349,12 +349,12 @@ int main()
 
 		case TO_CHANGE_DRAW_COLOR:
 			pOut->PrintMessage("Action: Change Draw Color, Click anywhere");
-			pOut->CreateColorToolBar();
+			pOut->colorpallete();
 			break;
 
 		case TO_CHANGE_FILL_COLOR:
 			pOut->PrintMessage("Action: Change Fill Color, Click anywhere");
-			pOut->CreateColorToolBar();
+			pOut->colorpallete();
 			break;
 
 		case TO_DELETEE:
@@ -365,7 +365,7 @@ int main()
 			pOut->PrintMessage("Action: Move figure, Click anywhere");
 			break;
 
-		case CHOOSE_COLOR_RED:
+		/*case CHOOSE_COLOR_RED:
 			pOut->PrintMessage("Action: Choose red color, Click anywhere");
 			break;
 
@@ -387,7 +387,7 @@ int main()
 
 		case CHOOSE_COLOR_BLACK:
 			pOut->PrintMessage("Action: Choose black color, Click anywhere");
-			break;
+			break;*/
 
 		case TO_UNDO:
 			pOut->PrintMessage("Action: Undo, Click anywhere");
