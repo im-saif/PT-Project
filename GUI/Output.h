@@ -13,7 +13,7 @@ public:
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
-	void colorpalette() const;      //create color palette
+	ActionType colorpalette() const;      //create color palette
 
 	void CreateColorToolBar() const; //creates Color mode toolbar & menu
 

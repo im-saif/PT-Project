@@ -86,27 +86,27 @@ ActionType Input::GetUserAction() const
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
-	else if (UI.InterfaceMode == MODE_COLOR) {
+	//else if (UI.InterfaceMode == MODE_COLOR) {
 
-		if (y >= 0 && y < UI.ToolBarHeight) {
+	//	/*if (y >= 0 && y < UI.ToolBarHeight) {*/
 
-			int ClickedItemOrder = (x / UI.MenuItemWidth + 10);
-			switch (ClickedItemOrder) {
-			case COLOR_RED: return CHOOSE_COLOR_RED;
-			case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
-			case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
-			case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
-			case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
-			case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
-			default: return EMPTY;
-			}
-		}
-		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
-		{
-			return DRAWING_AREA;
-		}
-		return STATUS;
-	}
+	//		int ClickedItemOrder = (x / 50);
+	//		switch (ClickedItemOrder) {
+	//		case COLOR_RED: return CHOOSE_COLOR_RED;
+	//		case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
+	//		case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
+	//		case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
+	//		case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
+	//		case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
+	//		default: return EMPTY;
+	//		}
+	//	/*}
+	//	if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+	//	{
+	//		return DRAWING_AREA;
+	//	}
+	//	return STATUS;*/
+	//}
 	else	//GUI is in PLAY mode
 	{
 		///TODO:

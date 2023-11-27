@@ -1,4 +1,5 @@
 #include "Output.h"
+#include "Input.h"
 
 
 Output::Output()
@@ -120,7 +121,7 @@ void Output::CreateDrawToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void Output::colorpalette() const {
+ActionType Output::colorpalette() const {
 	UI.InterfaceMode == MODE_COLOR;
 	int menulength = 310;
 	int menuwidth = 60;
@@ -144,7 +145,17 @@ void Output::colorpalette() const {
 		colorp->DrawImage(Menucolor[i], i * iconlength + 10 * i, 0, iconlength, iconwidth);
 	int x, y;
 	colorp->WaitMouseClick(x, y);
+	int ClickedItemOrder = (x / 50);
 	delete colorp;
+	switch (ClickedItemOrder) {
+	case COLOR_RED: return CHOOSE_COLOR_RED;
+	case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
+	case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
+	case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
+	case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
+	case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
+	default: return EMPTY;
+	}
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
