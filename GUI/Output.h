@@ -15,8 +15,8 @@ public:
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
 
-	window* colorpalette();      //create color palette
-	void closeColorMenu();
+	void colorpalette();      //create color palette
+	//void closeColorMenu();
 
 	//void CreateColorToolBar() const; //creates Color mode toolbar & menu
 

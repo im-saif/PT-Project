@@ -345,29 +345,29 @@ int main()
 
 		case TO_CHANGE_DRAW_COLOR:
 			pOut->PrintMessage("Action: Change Draw Color, Click anywhere");
-			switch (pIn->GetcolorAction(pOut->colorpalette())) {
+			pOut->colorpalette();
+			switch (pIn->GetcolorAction())
+			{
 			case CHOOSE_COLOR_RED: pOut->PrintMessage("You chose red! Click anywhere"); break;
 			case CHOOSE_COLOR_BLUE: pOut->PrintMessage("You chose blue! Click anywhere"); break;
 			case CHOOSE_COLOR_GREEN: pOut->PrintMessage("You chose green! Click anywhere"); break;
 			case CHOOSE_COLOR_ORANGE: pOut->PrintMessage("You chose orange! Click anywhere"); break;
 			case CHOOSE_COLOR_YELLOW: pOut->PrintMessage("You chose yellow! Click anywhere"); break;
-			case CHOOSE_COLOR_BLACK: pOut->PrintMessage("You chose black! Click anywhere"); break;
-				
-			}pOut->closeColorMenu();
-			break;
-
+			case CHOOSE_COLOR_BLACK: pOut->PrintMessage("You chose black! Click anywhere"); break;	
+			}
 		case TO_CHANGE_FILL_COLOR:
 			pOut->PrintMessage("Action: Change Fill Color, Click anywhere");
-			switch (pIn->GetcolorAction(pOut->colorpalette())) {
+			pOut->colorpalette();
+			pIn->GetcolorAction();
+			switch (pIn->GetcolorAction())
+			{
 			case CHOOSE_COLOR_RED: pOut->PrintMessage("You chose red! Click anywhere"); break;
 			case CHOOSE_COLOR_BLUE: pOut->PrintMessage("You chose blue! Click anywhere"); break;
 			case CHOOSE_COLOR_GREEN: pOut->PrintMessage("You chose green! Click anywhere"); break;
 			case CHOOSE_COLOR_ORANGE: pOut->PrintMessage("You chose orange! Click anywhere"); break;
 			case CHOOSE_COLOR_YELLOW: pOut->PrintMessage("You chose yellow! Click anywhere"); break;
 			case CHOOSE_COLOR_BLACK: pOut->PrintMessage("You chose black! Click anywhere"); break;
-			}pOut->closeColorMenu();
-			break;
-
+			}
 		case TO_DELETEE:
 			pOut->PrintMessage("Action: Delete figure, Click anywhere");
 			break;

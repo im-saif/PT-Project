@@ -37,7 +37,7 @@ Output::Output()
 
 Input* Output::CreateInput() const
 {
-	Input* pIn = new Input(pWind);
+	Input* pIn = new Input(pWind , colorp);
 	return pIn;
 }
 
@@ -121,7 +121,7 @@ void Output::CreateDrawToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-window* Output::colorpalette() {
+void Output::colorpalette() {
 	int menulength = 310;
 	int menuwidth = 60;
 	int iconwidth = 40;
@@ -142,13 +142,12 @@ window* Output::colorpalette() {
 
 	for (int i = 0; i < COLOR_ITM_COUNT; i++)
 		colorp->DrawImage(Menucolor[i], i * iconlength + 10 * i, 0, iconlength, iconwidth);
-	return colorp;
 	
 }
 
-void Output::closeColorMenu() {
-	delete colorp;
-}
+//void Output::closeColorMenu() {
+//	delete colorp;
+//}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void Output::CreatePlayToolBar() const

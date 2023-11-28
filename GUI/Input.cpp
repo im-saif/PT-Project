@@ -2,9 +2,10 @@
 #include "Output.h"
 
 
-Input::Input(window* pW) 
+Input::Input(window* pW , window* colorpointer) 
 {
 	pWind = pW; //point to the passed window
+	colorp = colorpointer;
 }
 
 void Input::GetPointClicked(int &x, int &y) const
@@ -115,7 +116,7 @@ ActionType Input::GetUserAction() const
 	}
 
 }
-ActionType Input::GetcolorAction(window*colorp) const
+ActionType Input::GetcolorAction() const
 {
 	Point p;
 	colorp->WaitMouseClick(p.x, p.y);
