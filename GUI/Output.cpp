@@ -121,12 +121,12 @@ void Output::CreateDrawToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-window* Output::colorpalette() const {
+window* Output::colorpalette() {
 	int menulength = 310;
 	int menuwidth = 60;
 	int iconwidth = 40;
 	int iconlength = 40;
-	window* colorp = new window(menulength, menuwidth, 350, 140);
+	colorp = new window(menulength, menuwidth, 350, 140);
 	colorp->ChangeTitle("Choose Color");
 
 	string Menucolor[COLOR_ITM_COUNT];
@@ -144,6 +144,10 @@ window* Output::colorpalette() const {
 		colorp->DrawImage(Menucolor[i], i * iconlength + 10 * i, 0, iconlength, iconwidth);
 	return colorp;
 	
+}
+
+void Output::closeColorMenu() {
+	delete colorp;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 

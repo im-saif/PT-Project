@@ -352,7 +352,8 @@ int main()
 			case CHOOSE_COLOR_ORANGE: pOut->PrintMessage("You chose orange! Click anywhere"); break;
 			case CHOOSE_COLOR_YELLOW: pOut->PrintMessage("You chose yellow! Click anywhere"); break;
 			case CHOOSE_COLOR_BLACK: pOut->PrintMessage("You chose black! Click anywhere"); break;
-			}
+				
+			}pOut->closeColorMenu();
 			break;
 
 		case TO_CHANGE_FILL_COLOR:
@@ -364,7 +365,7 @@ int main()
 			case CHOOSE_COLOR_ORANGE: pOut->PrintMessage("You chose orange! Click anywhere"); break;
 			case CHOOSE_COLOR_YELLOW: pOut->PrintMessage("You chose yellow! Click anywhere"); break;
 			case CHOOSE_COLOR_BLACK: pOut->PrintMessage("You chose black! Click anywhere"); break;
-			}
+			}pOut->closeColorMenu();
 			break;
 
 		case TO_DELETEE:

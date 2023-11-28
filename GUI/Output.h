@@ -6,6 +6,7 @@ class Output	//The application manager should have a pointer to this class
 {
 private:	
 	window* pWind;	//Pointer to the Graphics Window
+	window* colorp;
 public:
 	Output();		
 
@@ -13,7 +14,9 @@ public:
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
-	window* colorpalette() const;      //create color palette
+
+	window* colorpalette();      //create color palette
+	void closeColorMenu();
 
 	//void CreateColorToolBar() const; //creates Color mode toolbar & menu
 
