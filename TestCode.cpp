@@ -296,7 +296,7 @@ int main()
 	// 2- After reading the string clear the status bar
 	// 3- print on the status bar "You Entered" then print the string
 
-	string UserText = "You entered " + pIn->GetSrting(pOut);
+	string UserText = "You entered " + pIn->GetString(pOut);
 	pOut->PrintMessage(UserText);
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -320,7 +320,7 @@ int main()
 		switch (ActType)
 		{
 		case DRAW_RECT:
-			pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
+			pOut->PrintMessage("Action: Draw a Rectangle, Click anywhere");
 			break;
 
 		case DRAW_SQUARE:
@@ -373,30 +373,6 @@ int main()
 
 		case TO_MOVE:
 			pOut->PrintMessage("Action: Move figure, Click anywhere");
-			break;
-
-		case CHOOSE_COLOR_RED:
-			pOut->PrintMessage("Action: Choose red color, Click anywhere");
-			break;
-
-		case CHOOSE_COLOR_BLUE:
-			pOut->PrintMessage("Action: Choose blue color, Click anywhere");
-			break;
-
-		case CHOOSE_COLOR_GREEN:
-			pOut->PrintMessage("Action: Choose green color, Click anywhere");
-			break;
-
-		case CHOOSE_COLOR_ORANGE:
-			pOut->PrintMessage("Action: Choose orange color, Click anywhere");
-			break;
-
-		case CHOOSE_COLOR_YELLOW:
-			pOut->PrintMessage("Action: Choose yellow color, Click anywhere");
-			break;
-
-		case CHOOSE_COLOR_BLACK:
-			pOut->PrintMessage("Action: Choose black color, Click anywhere");
 			break;
 
 		case TO_UNDO:

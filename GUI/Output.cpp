@@ -122,7 +122,6 @@ void Output::CreateDrawToolBar() const
 //////////////////////////////////////////////////////////////////////////////////////////
 
 ActionType Output::colorpalette() const {
-	UI.InterfaceMode == MODE_COLOR;
 	int menulength = 310;
 	int menuwidth = 60;
 	int iconwidth = 40;
@@ -145,7 +144,7 @@ ActionType Output::colorpalette() const {
 		colorp->DrawImage(Menucolor[i], i * iconlength + 10 * i, 0, iconlength, iconwidth);
 	int x, y;
 	colorp->WaitMouseClick(x, y);
-	int ClickedItemOrder = (x / 50);
+	int ClickedItemOrder = x / (iconwidth+10);
 	delete colorp;
 	switch (ClickedItemOrder) {
 	case COLOR_RED: return CHOOSE_COLOR_RED;
@@ -184,23 +183,6 @@ void Output::CreatePlayToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void Output::CreateColorToolBar() const
-{
-	UI.InterfaceMode = MODE_COLOR;
-	pWind->SetPen(WHITE, 1);
-	pWind->SetBrush(WHITE);
-	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
-	string MenuItemImages[COLOR_ITM_COUNT];
-	MenuItemImages[COLOR_RED] = "images\\MenuItems\\red.jpg";
-	MenuItemImages[COLOR_BLUE] = "images\\MenuItems\\blue.jpg";
-	MenuItemImages[COLOR_GREEN] = "images\\MenuItems\\green.jpg";
-	MenuItemImages[COLOR_ORANGE] = "images\\MenuItems\\orange.jpg";
-	MenuItemImages[COLOR_YELLOW] = "images\\MenuItems\\yellow.jpg";
-	MenuItemImages[COLOR_BLACK] = "images\\MenuItems\\black.jpg";
-
-	for (int i = 0; i < COLOR_ITM_COUNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth + 10 * i, 0, UI.MenuItemWidth, UI.ToolBarHeight - 5);
-}
 
 void Output::ClearDrawArea() const
 {
