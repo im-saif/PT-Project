@@ -121,7 +121,7 @@ void Output::CreateDrawToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-ActionType Output::colorpalette() const {
+window* Output::colorpalette() const {
 	int menulength = 310;
 	int menuwidth = 60;
 	int iconwidth = 40;
@@ -142,19 +142,8 @@ ActionType Output::colorpalette() const {
 
 	for (int i = 0; i < COLOR_ITM_COUNT; i++)
 		colorp->DrawImage(Menucolor[i], i * iconlength + 10 * i, 0, iconlength, iconwidth);
-	int x, y;
-	colorp->WaitMouseClick(x, y);
-	int ClickedItemOrder = x / (iconwidth+10);
-	delete colorp;
-	switch (ClickedItemOrder) {
-	case COLOR_RED: return CHOOSE_COLOR_RED;
-	case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
-	case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
-	case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
-	case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
-	case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
-	default: return EMPTY;
-	}
+	return colorp;
+	
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 

@@ -115,6 +115,23 @@ ActionType Input::GetUserAction() const
 	}
 
 }
+ActionType Input::GetcolorAction(window*colorp) const
+{
+	Point p;
+	colorp->WaitMouseClick(p.x, p.y);
+
+	int ClickedItemOrder = p.x / (40+10);
+	delete colorp;
+	switch (ClickedItemOrder) {
+	case COLOR_RED: return CHOOSE_COLOR_RED;
+	case COLOR_BLUE: return CHOOSE_COLOR_BLUE;
+	case COLOR_GREEN: return CHOOSE_COLOR_GREEN;
+	case COLOR_ORANGE: return CHOOSE_COLOR_ORANGE;
+	case COLOR_YELLOW: return CHOOSE_COLOR_YELLOW;
+	case COLOR_BLACK: return CHOOSE_COLOR_BLACK;
+	default: return EMPTY;
+	}
+}
 /////////////////////////////////
 	
 Input::~Input()

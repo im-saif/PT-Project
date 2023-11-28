@@ -345,7 +345,7 @@ int main()
 
 		case TO_CHANGE_DRAW_COLOR:
 			pOut->PrintMessage("Action: Change Draw Color, Click anywhere");
-			switch (pOut->colorpalette()) {
+			switch (pIn->GetcolorAction(pOut->colorpalette())) {
 			case CHOOSE_COLOR_RED: pOut->PrintMessage("You chose red! Click anywhere"); break;
 			case CHOOSE_COLOR_BLUE: pOut->PrintMessage("You chose blue! Click anywhere"); break;
 			case CHOOSE_COLOR_GREEN: pOut->PrintMessage("You chose green! Click anywhere"); break;
@@ -357,7 +357,7 @@ int main()
 
 		case TO_CHANGE_FILL_COLOR:
 			pOut->PrintMessage("Action: Change Fill Color, Click anywhere");
-			switch (pOut->colorpalette()) {
+			switch (pIn->GetcolorAction(pOut->colorpalette())) {
 			case CHOOSE_COLOR_RED: pOut->PrintMessage("You chose red! Click anywhere"); break;
 			case CHOOSE_COLOR_BLUE: pOut->PrintMessage("You chose blue! Click anywhere"); break;
 			case CHOOSE_COLOR_GREEN: pOut->PrintMessage("You chose green! Click anywhere"); break;
