@@ -19,26 +19,7 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	//Note: Items are **(ordered)** here as they appear in menu
 	//If you want to change the menu items order, change the order here
 	ITM_RECT, //Recangle item in menu
-	ITM_SQUARE,
-	ITM_TRIANGLE,
-	ITM_HEXAGON,
-	ITM_CIRCLE,
-
-	SELECT,
-	CHANGE_DRAW_COLOR,
-	CHANGE_FILL_COLOR,
-	DELETE_FIGURE,
-	MOVE,
-	UNDO,
-	REDO,
-	CLEAR_ALL,
-	START_RECORDING,
-	STOP_RECORDING,
-	PLAY_RECORDING,
-	SAVE_GRAPH,
-	LOAD_GRAPH,
-
-	SWITCH_PLAY,
+	
 	EXIT,			//Exit item
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
